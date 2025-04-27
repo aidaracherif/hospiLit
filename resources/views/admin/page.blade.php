@@ -188,7 +188,5 @@
   <script src="{{ asset('storage/admin/js/main.js') }}"></script>
   <script src="{{ asset('storage/admin/js/charts.js') }}"></script>
 
-
-  
 </body>
 </html>
