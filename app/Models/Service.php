@@ -14,4 +14,10 @@ class Service extends Model
         'description',
         'statut',
     ];
+
+    public function hospitalizations()
+{
+    return $this->hasMany(Hospitalization::class);
+}
+
 }
