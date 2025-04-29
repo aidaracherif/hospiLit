@@ -421,18 +421,6 @@ $(document).ready(function() {
   });
 });
 
-// Gestion de l'affichage conditionnel des champs patient selon le statut
-// function togglePatientFields(statutSelector, patientSelector, dateSelector) {
-//   const statut = $(statutSelector).val();
-  
-//   if (statut === 'Occupé') {
-//     $(patientSelector).prop('required', true).closest('.mb-3').show();
-//     $(dateSelector).prop('required', true).closest('.mb-3').show();
-//   } else {
-//     $(patientSelector).prop('required', false).closest('.mb-3').hide();
-//     $(dateSelector).prop('required', false).closest('.mb-3').hide();
-//   }
-// }
 
 // Chargement des détails d'un lit pour la visualisation
 function loadLitDetails(litId) {

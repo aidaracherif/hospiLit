@@ -25,9 +25,13 @@
     <link rel="stylesheet" href="{{ asset('storage/admin/css/cards.css') }}">
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script> -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -49,7 +53,7 @@
         <a href="#" class="navbar-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           <div class="navbar-user">
             <img src="{{ asset('storage/admin/assets/avatar.png') }}" alt="Avatar" class="navbar-user-avatar">
-            <span class="navbar-user-name">Dr. Martin</span>
+            <span class="navbar-user-name">Dr. Abdou</span>
           </div>
         </a>
 

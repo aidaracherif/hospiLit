@@ -164,7 +164,7 @@ class PatientController extends Controller
         ],
         'hospitalization' => [
             'service' => $hosp->service->nom,
-            'bed' => 'Lit ' . $hosp->lit->numero,
+            'lit' =>  $hosp->lit->numero,
             'dateAdmission' => Carbon::parse($hosp->dateAdmission)->format('d/m/Y'),
             'dateSortie' => $hosp->dateSortie ? Carbon::parse($hosp->dateSortie)->format('d/m/Y') : null,
             'status' => $hosp->status,

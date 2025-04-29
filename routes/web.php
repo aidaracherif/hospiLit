@@ -32,11 +32,11 @@ Route::delete('/services/{service}/delete', [ServiceController::class, 'destroy'
 //Patient Routes
 Route::get('/patients', [App\Http\Controllers\PatientController::class, 'index'])->name('patients.index');
 Route::get('/patients/create', [App\Http\Controllers\PatientController::class, 'create'])->name('patients.create');
-Route::get('/patients/{patient}', [App\Http\Controllers\PatientController::class, 'show'])->name('patients.show');
+Route::get('/patients/{id}', [App\Http\Controllers\PatientController::class, 'show'])->name('patients.show');
 Route::post('/patients', [App\Http\Controllers\PatientController::class, 'store'])->name('patients.store');
-Route::put('/patients/{patient}', [App\Http\Controllers\PatientController::class, 'update'])->name('patients.update');
-Route::get('/patients/{patient}/edit', [App\Http\Controllers\PatientController::class, 'edit'])->name('patients.edit');
-Route::delete('/patients/{patient}/delete', [App\Http\Controllers\PatientController::class, 'destroy'])->name('patients.destroy');
+Route::put('/patients/{id}', [App\Http\Controllers\PatientController::class, 'update'])->name('patients.update');
+Route::get('/patients/{id}/edit', [App\Http\Controllers\PatientController::class, 'edit'])->name('patients.edit');
+Route::delete('/patients/{id}/delete', [App\Http\Controllers\PatientController::class, 'destroy'])->name('patients.destroy');
 
 //Lit Routes
 Route::get('/lits', [App\Http\Controllers\LitController::class, 'index'])->name('lits.index');
