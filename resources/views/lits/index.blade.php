@@ -480,7 +480,7 @@ function loadLitForEditing(litId) {
         
         <div class="mb-3">
           <label for="numero_edit" class="form-label">Numéro</label>
-          <input type="text" class="form-control" id="numero_edit" name="numero" value="${response.numero}" required>
+          <input type="text" class="form-control" id="numero_edit" name="numero" value="${response.numero}" disabled>
         </div>
         
         <div class="mb-3">

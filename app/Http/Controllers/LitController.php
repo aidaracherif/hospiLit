@@ -50,7 +50,7 @@ class LitController extends Controller
             'status' => 'required|string|max:255',
             'dateOccupation' => 'required|string|max:255',
         ]);
-        if ($validated['status'] !== 'Occupé') {
+        if ($validated['status'] !== 'Disponible') {
             $validated['dateOccupation'] = null;
         }
         Lit::create($validated);
@@ -59,19 +59,6 @@ class LitController extends Controller
             ->with('success', 'Le lit a été ajouté avec succès.');
         
     }
-
-    /**
-     * Display the specified resource.
-     */
-    // public function show(Lit $lit)
-    // {
-    //     //
-    //     // $lit = Lit::findOrFail($id);
-    //     // return view('', [
-    //     //     ''=> $lit
-    //     // ]);
-    //     return response()->json($lit->load('service'));
-    // }
     public function show($id)
 {
     $lit = Lit::with('service')->find($id);
