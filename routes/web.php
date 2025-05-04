@@ -37,6 +37,9 @@ Route::post('/patients', [App\Http\Controllers\PatientController::class, 'store'
 Route::put('/patients/{id}', [App\Http\Controllers\PatientController::class, 'update'])->name('patients.update');
 Route::get('/patients/{id}/edit', [App\Http\Controllers\PatientController::class, 'edit'])->name('patients.edit');
 Route::delete('/patients/{id}/delete', [App\Http\Controllers\PatientController::class, 'destroy'])->name('patients.destroy');
+Route::get('/get-beds-by-service/{serviceId}', [App\Http\Controllers\PatientController::class, 'getBedsByService']);
+
+
 
 //Lit Routes
 Route::get('/lits', [App\Http\Controllers\LitController::class, 'index'])->name('lits.index');

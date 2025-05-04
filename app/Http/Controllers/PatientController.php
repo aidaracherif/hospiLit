@@ -10,18 +10,29 @@ use App\Models\Service;
 use Carbon\Carbon;
 class PatientController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
+        $patientsHospitalises = Hospitalization::where('status', 'Admis')->count();
+        $admissionsToday = Hospitalization::whereDate('created_at', today())->count();
+        $sortiesToday = Hospitalization::whereDate('dateSortie', today())->count();
+
+        $dureeMoyenne = Hospitalization::whereNotNull('dateSortie')
+        ->selectRaw('AVG(DATEDIFF(dateSortie, created_at)) as duree_moyenne')
+        ->value('duree_moyenne');
+
         $hospitalizations = Hospitalization::with(['patient', 'service','lit'])->get();
         $services        = Service::all();
         $beds = Lit::all();
-// return view('hospitalizations.index', compact('hospitalizations','services'));
 
-        return view('patients.index', compact('hospitalizations', 'services', 'beds' ), [
+        return view('patients.index', compact('hospitalizations', 'services', 'beds','patientsHospitalises', 'admissionsToday' , 'sortiesToday','dureeMoyenne'), [
             'patients' => Patient::all(),
+        ],
+        [
+            'patientsHospitalises' => $patientsHospitalises,
+            'admissionsToday' => $admissionsToday,
+            'sortiesToday' => $sortiesToday,
+            'dureeMoyenne' => number_format($dureeMoyenne, 1)
         ]);
     }
 
@@ -33,9 +44,6 @@ class PatientController extends Controller
         return view("", compact(""));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
 {
     // Validation des données
@@ -299,4 +307,13 @@ public function edit($id)
         }
         
     }   
+
+    public function getBedsByService($serviceId)
+    {
+        $beds = Lit::where('serviceId', $serviceId)
+                ->where('status', 'Disponible')
+                ->get(['id', 'numero', 'status']);
+        return response()->json($beds);
+    }
+
 }
