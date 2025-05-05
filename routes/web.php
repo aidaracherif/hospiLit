@@ -50,5 +50,14 @@ Route::put('/lits/{lit}', [App\Http\Controllers\LitController::class, 'update'])
 Route::get('/lits/{lit}/edit', [App\Http\Controllers\LitController::class, 'edit'])->name('lits.edit');
 Route::delete('/lits/{lit}/delete', [App\Http\Controllers\LitController::class, 'destroy'])->name('lits.destroy');
 
+//User Routes
+Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
+Route::get('/users/{user}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
+Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
+Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+Route::get('/users/{user}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+Route::delete('/users/{user}/delete', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+
 
 
