@@ -99,6 +99,11 @@
       <span>Services</span>
     </a>
 
+    <a href="{{ route('users.index') }}" class="sidebar-item {{ request()->routeIs('users.index') ? 'active' : '' }}">
+      <div class="sidebar-icon"><i class="fas fa-users"></i></div>
+      <span>Gestion des Utilisateurs</span>
+    </a>
+
     <div class="sidebar-divider"></div>
 
     <a href="" class="sidebar-item">

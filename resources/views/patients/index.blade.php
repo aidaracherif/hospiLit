@@ -6,44 +6,7 @@
 <div class="container-fluid">
       
       <!-- Patient Stats -->
-      <!-- <div class="row mb-4">
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="display-4">125</div>
-              <div class="text-muted">Patients hospitalisés</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="display-4">18</div>
-              <div class="text-muted">Admissions aujourd'hui</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="display-4">12</div>
-              <div class="text-muted">Sorties aujourd'hui</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="display-4">4.2j</div>
-              <div class="text-muted">Durée moyenne de séjour</div>
-            </div>
-          </div>
-        </div>
-      </div>
-       -->
+  
        <div class="row mb-4">
         <div class="col-md-3 mb-3">
           <div class="card">
@@ -278,25 +241,22 @@
 
    {{-- Voir une hospitalisation --}}
 <div class="modal fade" id="viewHospitalizationModal" tabindex="-1" aria-labelledby="viewHospitalizationModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="viewHospitalizationModalLabel">Détails de l’hospitalisation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title" id="viewUserModalLabel">Détails de l'hospitalisation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
-      <div class="modal-body" id="viewHospitalizationContent">
-        <div class="text-center py-5">
-          <div class="spinner-border text-primary" role="status"></div>
-          <p>Chargement des informations...</p>
-        </div>
+      <div class="modal-body" id="viewUviewHospitalizationContentserContent">
+        <div class="text-center">Chargement...</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary btn-edit-from-view">Modifier</button>
       </div>
     </div>
   </div>
 </div>
-
 {{-- Modifier une hospitalisation --}}
 <div class="modal fade" id="editHospitalizationModal" tabindex="-1" aria-labelledby="editHospitalizationModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
