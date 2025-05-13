@@ -69,6 +69,8 @@
             </div>
           </div>
         </div>
+
+        
         
         <div class="col-md-3 mb-3">
           <div class="card">
@@ -480,7 +482,7 @@ function loadLitForEditing(litId) {
         
         <div class="mb-3">
           <label for="numero_edit" class="form-label">Numéro</label>
-          <input type="text" class="form-control" id="numero_edit" name="numero" value="${response.numero}" disabled>
+          <input type="text" class="form-control" id="numero_edit" name="numero" value="${response.numero}" readonly>
         </div>
         
         <div class="mb-3">

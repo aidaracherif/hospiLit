@@ -29,7 +29,7 @@
   <div class="col-md-3 mb-3">
     <div class="card">
       <div class="card-body text-center">
-        <div class="display-4">0</div>
+        <div class="display-4">{{ $totalUsers }}</div>
         <div class="text-muted">Utilisateurs</div>
       </div>
     </div>
