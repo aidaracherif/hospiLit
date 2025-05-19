@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Personnel;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -13,8 +14,9 @@ class ServiceController extends Controller
         $activeServices   = Service::where('statut', 'Actif')->count();
         $inactiveServices = Service::where('statut', 'Inactif')->count();
         $totalBeds        = Service::sum('nombreLit');
+        $totalUsers       = Personnel::count();
         $services = Service::all();
-        return view('services.services', compact('activeServices', 'inactiveServices', 'totalBeds','services')); // ⬅️ Ici, on retourne une vue Blade
+        return view('services.services', compact('activeServices', 'inactiveServices', 'totalBeds','totalUsers','services')); // ⬅️ Ici, on retourne une vue Blade
     }
 
 

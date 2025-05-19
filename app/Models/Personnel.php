@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Personnel extends Model
 {
-    //
-    protected $table = "personnel";
+    protected $table = "personnels";
     protected $fillable = [
         'nom',
         'prenom',
@@ -16,6 +15,13 @@ class Personnel extends Model
         'email',
         'adresse',
         'serviceId',
-        'role'
+        'role',
+        'statut',
+        'password',
     ];
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'ServiceId');
+    }
 }

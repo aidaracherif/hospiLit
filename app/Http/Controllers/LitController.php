@@ -74,11 +74,7 @@ class LitController extends Controller
      */
     public function edit(Lit $lit)
     {
-        //
-        // $lit = Lit::findOrFail($id);
-        // return view('', [   
-        //     'lit' => $lit,
-        // ]);
+        
         $lit = Lit::with('service')->find($lit->id);
         if (!$lit) {
             return response()->json(['error' => 'Lit introuvable'], 404);
